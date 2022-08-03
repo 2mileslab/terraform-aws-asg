@@ -1,8 +1,8 @@
-resource "aws_security_group" "user30-alb-sg" {
-  name        = "user30-alb-sg"
+resource "aws_security_group" "user*-alb-sg" {
+  name        = "user*-alb-sg"
   description = "open HTTP port for ALB"
 
-  vpc_id = aws_vpc.user30-vpc.id
+  vpc_id = aws_vpc.user*-vpc.id
 
   ingress {
     from_port   = 80
@@ -19,6 +19,6 @@ resource "aws_security_group" "user30-alb-sg" {
   }
 
   tags = {
-    Name = "user30-alb-sg"
+    Name = "user*-alb-sg"
   }
 }
