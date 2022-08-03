@@ -3,7 +3,7 @@ resource "aws_autoscaling_policy" "web_policy_up" {
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
   cooldown = 10
-  autoscaling_group_name = aws_autoscaling_group.user30-asg.name
+  autoscaling_group_name = aws_autoscaling_group.user*-asg.name
 }
 
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
@@ -17,7 +17,7 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
   threshold = "70"
 
   dimensions = {
-    AutoScalingGroupName = aws_autoscaling_group.user30-asg.name
+    AutoScalingGroupName = aws_autoscaling_group.user*-asg.name
   }
 
   alarm_description = "This metric monitor EC2 instance CPU utilization"
