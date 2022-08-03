@@ -1,18 +1,11 @@
-resource "aws_security_group" "user30-sg" {
-  name        = "user30-sg"
+resource "aws_security_group" "user*-sg" {
+  name        = "user*-sg"
   description = "open ssh port for bastion"
-  vpc_id = aws_vpc.user30-vpc.id
+  vpc_id = aws_vpc.user*-vpc.id
 
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -25,6 +18,6 @@ resource "aws_security_group" "user30-sg" {
   }
 
   tags = {
-    Name = "user30-sg"
+    Name = "user*-sg"
   }
 }
