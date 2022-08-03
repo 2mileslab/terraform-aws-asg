@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "user30-s3" {
-  bucket = "sk-user30-alb-log.com"
+resource "aws_s3_bucket" "user*-s3" {
+  bucket = "sk-user*-alb-log.com"
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "user30-s3" {
         "AWS": "arn:aws:iam::${var.alb_account_id}:root"
       },
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::sk-user30-alb-log.com/*"
+      "Resource": "arn:aws:s3:::sk-user*-alb-log.com/*"
     }
   ]
 }
