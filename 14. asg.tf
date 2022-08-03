@@ -41,7 +41,7 @@ resource "aws_autoscaling_group" "user*-asg" {
 
 resource "aws_autoscaling_attachment" "user*-asg-attachment" {
   autoscaling_group_name = aws_autoscaling_group.user*-asg.id
-  alb_target_group_arn   = aws_alb_target_group.user3*alb-tg.arn
+  alb_target_group_arn   = aws_alb_target_group.user*alb-tg.arn
 }
 
 
