@@ -1,12 +1,12 @@
-resource "aws_launch_configuration" "user30-asg-launch" {
-  name_prefix = "user30-autoscaling-web-"
+resource "aws_launch_configuration" "user*-asg-launch" {
+  name_prefix = "user*-autoscaling-web-"
 
   image_id = var.amazon_linux
   instance_type = "t2.nano"
-  key_name = var.user30_keyname
+  key_name = var.user*_keyname
   security_groups = [
-    aws_security_group.user30-sg.id,
-    aws_default_security_group.user30-default-sg.id,
+    aws_security_group.user*-sg.id,
+    aws_default_security_group.user*-default-sg.id,
   ]
   associate_public_ip_address = true
     
